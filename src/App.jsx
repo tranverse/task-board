@@ -1,9 +1,20 @@
 import { useState } from "react";
-import './assets/styles/global.css'
+import "./assets/styles/global.css";
+import TaskForm from "./components/TaskForm";
 function App() {
-  const [count, setCount] = useState(0);
+  const [tasks, setTasks] = useState([]);
+  const addTask = (task) => {
+    setTasks([...tasks, task]);
+  };
+  return (
+    <>
+      <div style={{ padding: "20px" }}>
+        <h1>Task Board</h1>
 
-  return <div></div>;
+        <TaskForm addTask={addTask} />
+      </div>
+    </>
+  );
 }
 
 export default App;
