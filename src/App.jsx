@@ -3,7 +3,12 @@ import "./assets/styles/global.css";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const initialTasks = [
+    { id: "1", title: "Learn React", status: "todo" },
+    { id: "2", title: "Build Todo App", status: "in-progress" },
+    { id: "3", title: "Review PR", status: "done" },
+  ];
+  const [tasks, setTasks] = useState(initialTasks);
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
 
